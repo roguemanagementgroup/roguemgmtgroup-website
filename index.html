@@ -5,48 +5,425 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rogue Management Group | RogueOS Deterministic AI Governance</title>
 <meta name="description" content="RogueOS is a deterministic, locally executing governance framework for autonomous agents. Every agent action is logged before it happens, provable against policy, and replayable bit for bit.">
-<meta name="keywords" content="deterministic AI governance, evidentiary autonomous systems, agent audit trail, AI liability, replayable AI, write-ahead log agent framework">
+<meta name="keywords" content="deterministic AI governance, evidentiary autonomous systems, agent audit trail, AI liability, replayable AI, write-ahead log agent framework, agent containment">
 <link rel="canonical" href="https://roguemgmtgroup.com/">
+<meta name="robots" content="index, follow">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Rogue Management Group | RogueOS Deterministic AI Governance">
 <meta property="og:description" content="Deterministic AI governance and evidentiary autonomous systems. Logged before it happens, provable against policy, replayable bit for bit.">
 <meta property="og:url" content="https://roguemgmtgroup.com/">
-<meta name="robots" content="index, follow">
+<meta property="og:image" content="https://roguemgmtgroup.com/assets/images/rogueos-logo.png">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Rogue Management Group LLC",
   "url": "https://roguemgmtgroup.com",
+  "logo": "https://roguemgmtgroup.com/assets/images/rogueos-logo.png",
   "founder": { "@type": "Person", "name": "Stephen Zeitvogel" },
   "foundingDate": "2025",
-  "address": { "@type": "PostalAddress", "addressLocality": "Charlotte", "addressRegion": "NC", "addressCountry": "US" }
+  "address": { "@type": "PostalAddress", "addressLocality": "Charlotte", "addressRegion": "NC", "addressCountry": "US" },
+  "description": "Developer of RogueOS, a deterministic, locally executing governance framework for autonomous agents.",
+  "email": "stephen.zeitvogel@roguemgmtgroup.com"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "RogueOS: A Deterministic, Locally Executing Autonomous Agent Framework",
+  "version": "1.2",
+  "author": { "@type": "Person", "name": "Stephen Zeitvogel" },
+  "publisher": { "@type": "Organization", "name": "Rogue Management Group LLC" },
+  "datePublished": "2025-12",
+  "keywords": "deterministic AI governance, evidentiary autonomous systems, write-ahead log, permission lattice, agent containment"
 }
 </script>
 <style>
-  :root { --ink:#0b0b0b; --paper:#ffffff; --muted:#6a6a6a; }
-  * { box-sizing:border-box; margin:0; padding:0; }
-  body { font-family: Georgia, "Times New Roman", serif; color:#0b0b0b; background:#ffffff; line-height:1.55; }
-  .wrap { max-width:860px; margin:0 auto; padding:64px 24px; }
-  .kicker { font-family: Arial, sans-serif; font-size:12px; letter-spacing:3px; text-transform:uppercase; color:#6a6a6a; }
-  h1 { font-family: Arial, sans-serif; font-size:40px; line-height:1.1; margin:14px 0; color:#0b0b0b; }
-  .sub { font-size:19px; color:#222; max-width:640px; }
-  .prov { font-family: Arial, sans-serif; font-size:13px; background:#f5f5f2; border:1.5px solid #0b0b0b; padding:12px 14px; margin:28px 0; }
-  .prov b { letter-spacing:1px; }
-  footer { font-family: Arial, sans-serif; font-size:12px; color:#6a6a6a; margin-top:48px; border-top:1px solid #ddd; padding-top:16px; }
+  :root{
+    --ink:#0b0f17;
+    --ink-2:#111725;
+    --paper:#f4f4f0;
+    --paper-2:#ffffff;
+    --text:#14181f;
+    --muted:#5f6672;
+    --line:#d9d7cf;
+    --brass:#b8862b;
+    --brass-soft:#e9dcc0;
+    --slate:#33415a;
+    --star:#c7d0e0;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:Georgia,"Times New Roman",serif;
+    color:var(--text);
+    background:var(--paper);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .sans{font-family:"Helvetica Neue",Arial,sans-serif}
+  .mono{font-family:"Consolas","SFMono-Regular",Menlo,"Courier New",monospace}
+  .wrap{max-width:960px;margin:0 auto;padding:0 24px}
+
+  /* HERO */
+  .hero{position:relative;background:var(--ink);color:#eef1f6;overflow:hidden;min-height:88vh;display:flex;align-items:center}
+  #stars{position:absolute;inset:0;width:100%;height:100%;display:block}
+  .hero-inner{position:relative;z-index:2;padding:120px 0 70px}
+  .eyebrow{font-family:"Helvetica Neue",Arial,sans-serif;font-size:12px;letter-spacing:4px;text-transform:uppercase;color:#8b93a3}
+  .hero h1{
+    font-family:"Helvetica Neue",Arial,sans-serif;
+    font-weight:700;
+    font-size:clamp(30px,5vw,54px);
+    line-height:1.06;
+    letter-spacing:-0.5px;
+    margin:18px 0 20px;
+    max-width:16ch;
+    color:#f7f9fc;
+  }
+  .hero .lede{font-size:clamp(16px,2.2vw,20px);color:#c3cad6;max-width:60ch}
+  .cta-row{margin-top:34px;display:flex;flex-wrap:wrap;gap:14px}
+  .btn{font-family:"Helvetica Neue",Arial,sans-serif;font-size:14px;letter-spacing:0.3px;text-decoration:none;padding:13px 22px;display:inline-block;border:1.5px solid transparent;transition:transform .15s ease,background .15s ease,color .15s ease}
+  .btn-primary{background:var(--brass);color:#1a1206;font-weight:600}
+  .btn-primary:hover{transform:translateY(-2px)}
+  .btn-ghost{border-color:#3a4356;color:#dfe4ec}
+  .btn-ghost:hover{border-color:var(--brass);color:#fff}
+
+  /* PROVENANCE ledger strip */
+  .ledger{background:var(--ink-2);color:#cfd6e2;border-top:1px solid #1e2636}
+  .ledger .wrap{padding:16px 24px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  .seal{font-family:"Helvetica Neue",Arial,sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#1a1206;background:var(--brass);padding:4px 9px;white-space:nowrap}
+  .ledger .entry{font-family:"Consolas","SFMono-Regular",Menlo,"Courier New",monospace;font-size:12.5px;color:#aeb8c8;line-height:1.5}
+  .ledger .entry b{color:#e7edf6;font-weight:600}
+
+  /* SECTIONS on paper */
+  section.band{padding:78px 0;border-bottom:1px solid var(--line)}
+  .tag{font-family:"Helvetica Neue",Arial,sans-serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--brass);margin-bottom:14px}
+  h2.head{font-family:"Helvetica Neue",Arial,sans-serif;font-weight:700;font-size:clamp(22px,3vw,32px);line-height:1.15;letter-spacing:-0.3px;margin-bottom:8px;color:#0d1119}
+  .band p.body{font-size:17px;max-width:66ch;color:#232a34}
+  .band p.body + p.body{margin-top:14px}
+
+  /* PROBLEM three blocks */
+  .three{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:30px}
+  .card{background:var(--paper-2);border:1px solid var(--line);border-top:3px solid var(--slate);padding:22px}
+  .card h3{font-family:"Helvetica Neue",Arial,sans-serif;font-size:15px;letter-spacing:0.4px;margin-bottom:8px;color:#0d1119}
+  .card p{font-size:14.5px;color:#3a424e}
+  .close-line{margin-top:30px;font-size:19px;font-style:italic;color:#0d1119;border-left:3px solid var(--brass);padding-left:16px;max-width:60ch}
+
+  /* EIGHT PRIMITIVES */
+  .diagram-note{font-size:14px;color:var(--muted);margin:8px 0 24px}
+  .svg-hold{background:var(--paper-2);border:1px solid var(--line);padding:24px 18px}
+  .prim-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px 30px;margin-top:26px}
+  .prim{border-left:2px solid var(--line);padding-left:14px}
+  .prim .n{font-family:"Consolas","SFMono-Regular",Menlo,"Courier New",monospace;font-size:12px;color:var(--brass)}
+  .prim h4{font-family:"Helvetica Neue",Arial,sans-serif;font-size:15px;margin:2px 0 4px;color:#0d1119}
+  .prim p{font-size:14px;color:#3a424e}
+
+  /* CONTAINMENT two guarantees */
+  .guarantees{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:28px}
+  .g{background:var(--ink);color:#e9edf4;padding:26px}
+  .g .k{font-family:"Consolas","SFMono-Regular",Menlo,"Courier New",monospace;font-size:12px;color:var(--brass);letter-spacing:1px}
+  .g h3{font-family:"Helvetica Neue",Arial,sans-serif;font-size:19px;margin:8px 0 10px;color:#fff;line-height:1.25}
+  .g p{font-size:15px;color:#bcc4d2}
+
+  /* CONTACT WALL */
+  .wall{background:var(--ink);color:#e9edf4}
+  .wall .head{color:#fff}
+  .wall p.body{color:#c3cad6}
+  .form{margin-top:26px;max-width:640px}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .field{margin-bottom:14px}
+  label{display:block;font-family:"Helvetica Neue",Arial,sans-serif;font-size:12px;letter-spacing:0.4px;color:#9aa3b3;margin-bottom:6px}
+  input,textarea{width:100%;font-family:Georgia,serif;font-size:15px;padding:11px 12px;background:#0f1521;border:1px solid #2a3346;color:#eef1f6}
+  input:focus,textarea:focus{outline:none;border-color:var(--brass)}
+  textarea{min-height:96px;resize:vertical}
+  .gate-note{font-family:"Helvetica Neue",Arial,sans-serif;font-size:13px;color:#8b93a3;margin-top:10px}
+
+  /* FOOTER */
+  footer.site{background:var(--ink-2);color:#aeb8c8;padding:34px 0}
+  footer.site .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:flex-end}
+  footer .prov{font-family:"Consolas","SFMono-Regular",Menlo,"Courier New",monospace;font-size:11.5px;color:#7b8698;max-width:70ch;line-height:1.6}
+
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media (max-width:760px){
+    .three{grid-template-columns:1fr}
+    .prim-grid{grid-template-columns:1fr}
+    .guarantees{grid-template-columns:1fr}
+    .row{grid-template-columns:1fr}
+    .hero{min-height:82vh}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+    html{scroll-behavior:auto}
+  }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <div class="kicker">Rogue Management Group LLC</div>
-  <h1>If your AI cannot survive an audit, it does not belong on your shop floor.</h1>
-  <p class="sub">RogueOS is a deterministic, locally executing governance framework. Every agent action is logged before it happens, provable against policy, and replayable bit for bit.</p>
-  <div class="prov">
-    <b>PROVENANCE.</b> Architecture first authored and filed December 2025. USPTO provisional applications 63/828,137 and 63/864,057.
+
+<header class="hero">
+  <canvas id="stars" aria-hidden="true"></canvas>
+  <div class="wrap hero-inner">
+    <div class="eyebrow">Rogue Management Group LLC</div>
+    <h1>If your AI cannot survive an audit, it does not belong on your shop floor.</h1>
+    <p class="lede">RogueOS is a deterministic, locally executing governance framework. Every agent action is logged before it happens, provable against policy, and replayable bit for bit.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="assets/RogueOS_White_Paper_v1.2.pdf">Read the White Paper</a>
+      <a class="btn btn-ghost" href="#briefing">Request a Technical Briefing</a>
+    </div>
   </div>
-  <footer>
-    Rogue Management Group LLC, Charlotte, North Carolina. stephen.zeitvogel@roguemgmtgroup.com
-  </footer>
+</header>
+
+<div class="ledger">
+  <div class="wrap">
+    <span class="seal">Sealed</span>
+    <span class="entry mono"><b>Provenance.</b> Architecture first authored and filed December 2025. USPTO provisional applications 63/828,137 and 63/864,057. White Paper v1.2 published.</span>
+  </div>
 </div>
+
+<main>
+
+<section class="band">
+  <div class="wrap reveal">
+    <div class="tag">The Problem</div>
+    <h2 class="head">When an agent does something wrong, who gets blamed, and can you prove what happened?</h2>
+    <div class="three">
+      <div class="card">
+        <h3>The Operator</h3>
+        <p>You get blamed for a machine you cannot explain. The action already happened. The record is whatever the system chose to keep.</p>
+      </div>
+      <div class="card">
+        <h3>The Insurer</h3>
+        <p>You cannot underwrite what you cannot reconstruct. Without a fixed record, every claim is a dispute about what the agent actually did.</p>
+      </div>
+      <div class="card">
+        <h3>The Auditor</h3>
+        <p>A log that can be edited is not evidence. If an attacker can rewrite the history, the history proves nothing.</p>
+      </div>
+    </div>
+    <p class="close-line">RogueOS converts every agent action into a signed, time-ordered, replayable fact.</p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap reveal">
+    <div class="tag">The Architecture</div>
+    <h2 class="head">Eight governance primitives</h2>
+    <p class="diagram-note">Three foundational primitives carry the guarantees. Five composed primitives build on them. The composed tier depends on the foundation beneath it.</p>
+    <div class="svg-hold">
+      <svg viewBox="0 0 900 470" width="100%" role="img" aria-label="Eight primitive architecture, composed tier depending on foundational tier" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <style>
+            .lbl{font-family:'Helvetica Neue',Arial,sans-serif;fill:#0d1119;font-size:14px;font-weight:600}
+            .sub{font-family:'Helvetica Neue',Arial,sans-serif;fill:#f4f4f0;font-size:11px;letter-spacing:2px}
+            .fnd{font-family:'Helvetica Neue',Arial,sans-serif;fill:#eef1f6;font-size:13.5px;font-weight:600}
+            .tierlabel{font-family:'Helvetica Neue',Arial,sans-serif;fill:#5f6672;font-size:11px;letter-spacing:3px}
+          </style>
+          <marker id="arrow" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto">
+            <path d="M0,0 L6,3 L0,6 Z" fill="#b8862b"></path>
+          </marker>
+        </defs>
+
+        <text x="20" y="24" class="tierlabel">COMPOSED TIER</text>
+        <g>
+          <rect x="20" y="34" width="164" height="60" fill="#ffffff" stroke="#33415a" stroke-width="1.5"></rect>
+          <text x="102" y="60" text-anchor="middle" class="lbl">Builder's Permit</text>
+          <text x="102" y="78" text-anchor="middle" class="lbl">Kernel</text>
+
+          <rect x="204" y="34" width="150" height="60" fill="#ffffff" stroke="#33415a" stroke-width="1.5"></rect>
+          <text x="279" y="69" text-anchor="middle" class="lbl">Governance Engine</text>
+
+          <rect x="374" y="34" width="150" height="60" fill="#ffffff" stroke="#33415a" stroke-width="1.5"></rect>
+          <text x="449" y="69" text-anchor="middle" class="lbl">Evidence Ledger</text>
+
+          <rect x="544" y="34" width="150" height="60" fill="#ffffff" stroke="#33415a" stroke-width="1.5"></rect>
+          <text x="619" y="69" text-anchor="middle" class="lbl">Trust Fabric</text>
+
+          <rect x="714" y="34" width="166" height="60" fill="#ffffff" stroke="#33415a" stroke-width="1.5"></rect>
+          <text x="797" y="60" text-anchor="middle" class="lbl">Persistent Runtime</text>
+          <text x="797" y="78" text-anchor="middle" class="lbl">Identity</text>
+        </g>
+
+        <line x1="450" y1="120" x2="450" y2="188" stroke="#b8862b" stroke-width="2" marker-end="url(#arrow)"></line>
+        <text x="466" y="160" class="tierlabel">DEPENDS ON</text>
+
+        <text x="20" y="228" class="tierlabel">FOUNDATIONAL TIER</text>
+        <g>
+          <rect x="20" y="240" width="270" height="70" fill="#0b0f17" stroke="#0b0f17"></rect>
+          <text x="155" y="270" text-anchor="middle" class="fnd">Write-Ahead Log</text>
+          <text x="155" y="292" text-anchor="middle" class="fnd" style="font-weight:400;fill:#aeb8c8;font-size:11.5px">recorded before it happens</text>
+
+          <rect x="310" y="240" width="270" height="70" fill="#0b0f17" stroke="#0b0f17"></rect>
+          <text x="445" y="270" text-anchor="middle" class="fnd">Immutable Permission Lattice</text>
+          <text x="445" y="292" text-anchor="middle" class="fnd" style="font-weight:400;fill:#aeb8c8;font-size:11.5px">only enumerated actions run</text>
+
+          <rect x="600" y="240" width="280" height="70" fill="#0b0f17" stroke="#0b0f17"></rect>
+          <text x="740" y="270" text-anchor="middle" class="fnd">Zero-Non-Determinism Sandbox</text>
+          <text x="740" y="292" text-anchor="middle" class="fnd" style="font-weight:400;fill:#aeb8c8;font-size:11.5px">same inputs, same run, always</text>
+        </g>
+
+        <rect x="20" y="356" width="860" height="86" fill="#f4f4f0" stroke="#d9d7cf"></rect>
+        <text x="450" y="388" text-anchor="middle" class="lbl" style="fill:#5f6672;font-weight:400;font-size:13px">Every action passes down through the foundation.</text>
+        <text x="450" y="412" text-anchor="middle" class="lbl" style="fill:#0d1119;font-size:14px">Logged, then checked against policy, then executed. Never the other way around.</text>
+      </svg>
+    </div>
+
+    <div class="prim-grid">
+      <div class="prim"><div class="n mono">F1</div><h4>Write-Ahead Log</h4><p>Every action is recorded before it can happen. History cannot be back-dated.</p></div>
+      <div class="prim"><div class="n mono">F2</div><h4>Immutable Permission Lattice</h4><p>Only enumerated actions can execute. Nothing outside the tree runs.</p></div>
+      <div class="prim"><div class="n mono">F3</div><h4>Zero-Non-Determinism Sandbox</h4><p>The same inputs always produce the same run, so any run can be reproduced.</p></div>
+      <div class="prim"><div class="n mono">C1</div><h4>Builder's Permit Authorization Kernel</h4><p>Every capability is granted by an explicit permit, checked before use.</p></div>
+      <div class="prim"><div class="n mono">C2</div><h4>Governance Engine</h4><p>Policy is enforced at runtime, not suggested after the fact.</p></div>
+      <div class="prim"><div class="n mono">C3</div><h4>Evidence Ledger</h4><p>Each decision becomes a signed, time-ordered, replayable fact.</p></div>
+      <div class="prim"><div class="n mono">C4</div><h4>Trust Fabric</h4><p>Identity and authority are verified for every action, not assumed.</p></div>
+      <div class="prim"><div class="n mono">C5</div><h4>Persistent Runtime Identity</h4><p>Execution is bound to a verifiable identity across the agent's lifetime.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap reveal">
+    <div class="tag">Containment and Evidence</div>
+    <h2 class="head">Two guarantees that hold when the machine is under attack</h2>
+    <p class="body">Most frameworks govern what an agent may do on a healthy host. The harder problem is what happens when the host is compromised. RogueOS is built for that case.</p>
+    <div class="guarantees">
+      <div class="g">
+        <div class="k mono">Guarantee 1</div>
+        <h3>The agent cannot be turned against its owner.</h3>
+        <p>A governed agent has no ambient authority. It can only perform actions a permit granted, and no permit can exceed the lattice it derives from. An attacker who reaches the host still cannot make the agent act outside its permit.</p>
+      </div>
+      <div class="g">
+        <div class="k mono">Guarantee 2</div>
+        <h3>The record cannot be silently erased.</h3>
+        <p>The log is append-only and sealed. An attacker cannot rewrite history, only break the chain, and a broken chain is detected in seconds. The absence of evidence becomes evidence of tampering.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap reveal">
+    <div class="tag">Scope</div>
+    <h2 class="head">What determinism means here</h2>
+    <p class="body">The governance path is deterministic and replayable. Model inference is not, and RogueOS does not pretend otherwise. Model inference is captured as a recorded input and output pair. The prompt hash, model hash, parameters, and seed are written to the log before any side effect. Replay verifies the decision chain, not the model's regenerated text.</p>
+    <p class="body">This scope is stated plainly because honest boundaries are what make the strong guarantees believable. RogueOS is a governance and evidence framework, not an endpoint detection product. It does not prevent host compromise. It guarantees that a compromise cannot silently rewrite the record of what the governed agent did.</p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap reveal">
+    <div class="tag">Evidence Posture</div>
+    <h2 class="head">Your claim file writes itself</h2>
+    <p class="body">RogueOS is designed to satisfy Federal Rules of Evidence 901 and 902 for self-authenticating digital records. The record is a sealed, append-only log, an open verifier, and a notarized verifier hash. Reconstruction cost after an incident drops to near zero, because the evidence package existed before the incident did. The first billable hour starts at analysis, not collection.</p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap reveal">
+    <div class="tag">Standards Alignment</div>
+    <h2 class="head">Built to map cleanly onto emerging agent-governance work</h2>
+    <p class="body">The framework is designed to map cleanly onto the agent-governance direction taking shape at NIST and in the broader standards community. RogueOS makes no certification claim it has not earned. It offers a concrete, testable substrate that governance and audit tooling can build on.</p>
+  </div>
+</section>
+
+<section class="band wall" id="briefing">
+  <div class="wrap reveal">
+    <div class="tag">Request a Technical Briefing</div>
+    <h2 class="head">The deep material is gated</h2>
+    <p class="body">Trust math, policy DSL internals, and permit-derivation logic are available under NDA to qualified integrators, insurers, and standards bodies. Tell us what you are evaluating and we will follow up.</p>
+    <div class="form">
+      <div class="row">
+        <div class="field"><label for="f-name">Name</label><input id="f-name" type="text" autocomplete="name"></div>
+        <div class="field"><label for="f-org">Organization</label><input id="f-org" type="text" autocomplete="organization"></div>
+      </div>
+      <div class="row">
+        <div class="field"><label for="f-role">Role</label><input id="f-role" type="text"></div>
+        <div class="field"><label for="f-email">Email</label><input id="f-email" type="email" autocomplete="email"></div>
+      </div>
+      <div class="field"><label for="f-eval">What are you evaluating</label><textarea id="f-eval"></textarea></div>
+      <a class="btn btn-primary" id="send" href="#">Send Briefing Request</a>
+      <p class="gate-note">This opens your email client addressed to stephen.zeitvogel@roguemgmtgroup.com with your details filled in. No data is stored on this page.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="sans" style="font-size:13px;color:#cfd6e2">
+      Rogue Management Group LLC<br>Charlotte, North Carolina<br>
+      <a href="mailto:stephen.zeitvogel@roguemgmtgroup.com" style="color:var(--brass);text-decoration:none">stephen.zeitvogel@roguemgmtgroup.com</a>
+    </div>
+    <div class="prov mono">Architecture first authored and filed December 2025. USPTO provisional applications 63/828,137 and 63/864,057.</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Seeded, deterministic starfield. A quiet nod to the framework itself.
+  var canvas = document.getElementById('stars');
+  if(!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var reduce = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var w,h,stars,dpr;
+  function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;var t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+  function build(){
+    dpr = Math.min(window.devicePixelRatio||1,2);
+    w = canvas.clientWidth; h = canvas.clientHeight;
+    canvas.width = w*dpr; canvas.height = h*dpr; ctx.setTransform(dpr,0,0,dpr,0,0);
+    var rnd = mulberry32(20251215);
+    var count = Math.floor((w*h)/9000);
+    stars = [];
+    for(var i=0;i<count;i++){
+      stars.push({x:rnd()*w, y:rnd()*h, z:rnd()*0.8+0.2, r:rnd()*1.3+0.2, tw:rnd()*Math.PI*2});
+    }
+  }
+  var mx=0,my=0,tphase=0;
+  function draw(){
+    ctx.clearRect(0,0,w,h);
+    for(var i=0;i<stars.length;i++){
+      var s=stars[i];
+      var px = s.x + mx*s.z*14;
+      var py = s.y + my*s.z*14;
+      var a = 0.45 + 0.35*Math.sin(tphase*0.6 + s.tw);
+      ctx.beginPath();
+      ctx.fillStyle = 'rgba(199,208,224,'+a.toFixed(3)+')';
+      ctx.arc(px,py,s.r*s.z,0,Math.PI*2);
+      ctx.fill();
+    }
+  }
+  function loop(){ tphase += 0.016; draw(); requestAnimationFrame(loop); }
+  build(); draw();
+  if(!reduce){
+    window.addEventListener('mousemove', function(e){ mx=(e.clientX/window.innerWidth-0.5); my=(e.clientY/window.innerHeight-0.5); });
+    requestAnimationFrame(loop);
+  }
+  window.addEventListener('resize', function(){ build(); draw(); });
+
+  // Scroll reveal
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); obs.unobserve(en.target); } });
+  }, {threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
+
+  // Contact wall builds a mailto with the entered fields. No backend, no storage.
+  var send = document.getElementById('send');
+  if(send){
+    send.addEventListener('click', function(ev){
+      ev.preventDefault();
+      function v(id){ var el=document.getElementById(id); return el?el.value.trim():''; }
+      var subject = 'RogueOS Technical Briefing Request';
+      var body = 'Name: '+v('f-name')+'\n'+
+                 'Organization: '+v('f-org')+'\n'+
+                 'Role: '+v('f-role')+'\n'+
+                 'Email: '+v('f-email')+'\n\n'+
+                 'Evaluating:\n'+v('f-eval')+'\n';
+      window.location.href = 'mailto:stephen.zeitvogel@roguemgmtgroup.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+    });
+  }
+})();
+</script>
 </body>
 </html>

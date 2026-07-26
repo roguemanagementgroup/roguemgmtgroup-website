@@ -1,0 +1,5 @@
+﻿Copyright 2025 Rogue Management Group LLC. All rights reserved.
+
+RogueOS and Builder's Permit are proprietary works of Rogue Management Group LLC.
+Architecture filed under USPTO provisional applications 63/828,137 and 63/864,057.
+No license is granted by publication of this repository.

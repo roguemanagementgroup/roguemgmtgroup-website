@@ -1,0 +1,14 @@
+﻿name: build
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Confirm index.html present
+        run: test -f index.html && echo "index.html present"
+      - name: Basic HTML lint
+        run: npx --yes htmlhint index.html || true

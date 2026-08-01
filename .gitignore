@@ -1,4 +1,9 @@
-﻿.env
+.env
 .env.*
 node_modules/
 .netlify/
+%AppData%
+node_modules
+.netlify
+*.bak
+archive_index_*.html

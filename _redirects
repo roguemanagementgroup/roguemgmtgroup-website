@@ -1,0 +1,6 @@
+# Canonical URL fixes (force .html -> clean URL, added by fix-canonicals.js)
+/about.html   /about   301!
+/framework.html   /framework   301!
+/glossary.html   /glossary   301!
+/rogueos.html   /rogueos   301!
+/trades.html   /trades   301!

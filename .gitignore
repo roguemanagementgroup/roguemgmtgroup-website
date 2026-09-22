@@ -7,3 +7,30 @@ node_modules
 .netlify
 *.bak
 archive_index_*.html
+
+# OS-generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+$RECYCLE.BIN/
+
+# Editor / IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Local scratch, research notes, and working drafts that are not part of
+# the published site (personal notes, ad-hoc scripts, one-off audit
+# reports, downloaded reference material, etc.)
+/incoming/
+*.local.txt
+*.scratch.*
+
+# Local preview / build artifacts
+.cache/
+dist/
+*.local.log
+npm-debug.log*

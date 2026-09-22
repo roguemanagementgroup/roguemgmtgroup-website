@@ -1,0 +1,557 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rogue Management Group | RogueOS: Deterministic AI Agent Governance</title>
+  <meta name="description" content="RogueOS provides a zero-trust, local runtime control plane and Write-Ahead Log (WAL) architecture for enterprise autonomous AI agents." />
+  <link rel="canonical" href="https://roguemgmtgroup.com/" />
+  
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://roguemgmtgroup.com/" />
+  <meta property="og:title" content="Rogue Management Group | RogueOS Control Plane" />
+  <meta property="og:description" content="Deterministic runtime execution boundaries and FRE 902 tamper-evident audit chains for autonomous AI agents." />
+  <meta property="og:site_name" content="Rogue Management Group" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://roguemgmtgroup.com/#organization",
+        "name": "Rogue Management Group, LLC",
+        "url": "https://roguemgmtgroup.com",
+        "founder": {
+          "@type": "Person",
+          "@id": "https://roguemgmtgroup.com/#founder",
+          "name": "Stephen Zeitvogel",
+          "jobTitle": "Chief Architect & Founder"
+        },
+        "knowsAbout": [
+          "Artificial Intelligence Governance",
+          "Autonomous Agent Control Planes",
+          "Deterministic Runtime Sandboxing",
+          "Write-Ahead Logging (WAL)",
+          "Zero Trust Architecture",
+          "Federal Rules of Evidence 901-902 Digital Forensics"
+        ]
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://roguemgmtgroup.com/#software",
+        "name": "RogueOS",
+        "applicationCategory": "SecurityApplication",
+        "operatingSystem": "Cross-platform",
+        "author": {
+          "@id": "https://roguemgmtgroup.com/#organization"
+        },
+        "description": "A deterministic, locally-executing autonomous-agent framework enforcing permission lattices, runtime boundaries, and append-only audit ledgers."
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="bg-[#080B10] text-[#F8FAFC] font-sans antialiased selection:bg-amber-500 selection:text-black">
+
+  <!-- NAVIGATION -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-[#080B10]/95 backdrop-blur-md border-b border-[#1E293B]">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-4 group">
+        <!-- High Fidelity Stencil Wolf Logo -->
+        <div class="relative w-12 h-12 flex items-center justify-center bg-[#0F172A]/80 border border-[#1E293B] rounded-lg group-hover:border-amber-500/50 shadow-[0_0_15px_rgba(15,23,42,0.5)] transition-all duration-300 overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-tr from-amber-500/0 via-amber-500/5 to-amber-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <svg class="w-10 h-10 text-slate-300 group-hover:text-amber-400 transition-all duration-300 transform group-hover:scale-105" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <!-- Wolf Head Outline looking Right with Jagged Fur on the Left -->
+            <path d="M 82 45 L 77 50 L 67 52 L 52 68 L 32 80 L 28 73 L 35 68 L 26 60 L 33 54 L 22 46 L 31 40 L 20 32 L 32 26 L 36 15 L 34 5 L 42 12 L 45 4 L 51 15 L 62 30 L 75 38 L 82 40 Z" fill="none" stroke="currentColor" />
+            <!-- Stencil Cuts -->
+            <path d="M 33 54 L 38 48" stroke="currentColor" stroke-width="1.5" />
+            <path d="M 42 42 L 46 36" stroke="currentColor" stroke-width="1.5" />
+            <!-- Glowing eye (Red Eye) -->
+            <circle cx="65" cy="32" r="3" fill="#ef4444" class="animate-ping" style="animation-duration: 1.5s;" />
+            <circle cx="65" cy="32" r="1.5" fill="#ef4444" />
+          </svg>
+        </div>
+        <div>
+          <span class="font-display text-lg tracking-wider uppercase font-bold text-white block leading-none">Rogue Management Group</span>
+          <span class="font-mono text-[9px] text-cyan-400 uppercase tracking-widest">Charlotte, NC // Private Governance</span>
+        </div>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-7 text-xs uppercase tracking-widest font-mono text-slate-300">
+        <a href="implementation.html" class="hover:text-amber-400 transition-colors">Implementation</a>
+        <a href="builders-permit.html" class="hover:text-amber-400 transition-colors">The Builder's Permit</a>
+        <a href="rogueos.html" class="hover:text-amber-400 transition-colors">RogueOS</a>
+        <a href="architect.html" class="hover:text-amber-400 transition-colors">The Architect</a>
+        <a href="index.html#whitepaper" class="hover:text-cyan-400 transition-colors flex items-center gap-1">
+          <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span> Thesis
+        </a>
+        <div class="relative group/menu">
+          <button class="hover:text-amber-400 transition-colors flex items-center gap-1">More <i data-lucide="chevron-down" class="w-3 h-3"></i></button>
+          <div class="absolute right-0 top-full mt-2 w-48 bg-[#0F172A] border border-[#1E293B] shadow-xl rounded-md py-2 hidden group-hover/menu:block">
+            <a href="framework.html" class="block px-4 py-2 hover:bg-[#1E293B] transition-colors text-slate-300 hover:text-white">Framework Specs</a>
+            <a href="evidence.html" class="block px-4 py-2 hover:bg-[#1E293B] transition-colors text-slate-300 hover:text-white">Evidence Ledger</a>
+            <a href="glossary.html" class="block px-4 py-2 hover:bg-[#1E293B] transition-colors text-slate-300 hover:text-white">Lexicon</a>
+            <a href="trades.html" class="block px-4 py-2 hover:bg-[#1E293B] transition-colors text-slate-300 hover:text-white">American Build</a>
+            <a href="contact.html" class="block px-4 py-2 hover:bg-[#1E293B] transition-colors text-slate-300 hover:text-white">Contact HQ</a>
+          </div>
+        </div>
+      </nav>
+
+      <div class="flex items-center gap-4">
+        <a href="contact.html" class="hidden sm:inline-block bg-amber-500 hover:bg-amber-400 text-black font-mono text-xs font-bold uppercase tracking-wider px-5 py-2.5 transition-all shadow-[0_0_20px_rgba(245,158,11,0.3)]">Open The Channel</a>
+        <button class="lg:hidden text-white hover:text-amber-400 focus:outline-none" id="mobile-menu-btn">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE MENU DRAWER -->
+  <div class="fixed inset-0 z-40 bg-[#080B10]/95 backdrop-blur-md border-b border-[#1E293B] hidden pt-24 px-6 flex-col gap-6" id="mobile-menu">
+    <nav class="flex flex-col gap-5 text-sm uppercase tracking-widest font-mono text-slate-300">
+      <a href="implementation.html" class="hover:text-amber-400 transition-colors py-2 border-b border-slate-800">01 // Implementation</a>
+      <a href="builders-permit.html" class="hover:text-amber-400 transition-colors py-2 border-b border-slate-800">02 // The Builder's Permit</a>
+      <a href="rogueos.html" class="hover:text-amber-400 transition-colors py-2 border-b border-slate-800">03 // RogueOS</a>
+      <a href="architect.html" class="hover:text-amber-400 transition-colors py-2 border-b border-slate-800">04 // The Architect</a>
+      <a href="index.html#whitepaper" class="hover:text-cyan-400 transition-colors py-2 border-b border-slate-800">05 // Thesis</a>
+      <a href="framework.html" class="hover:text-amber-400 transition-colors py-2 border-b border-slate-800">06 // Framework Specs</a>
+      <a href="evidence.html" class="hover:text-amber-400 transition-colors py-2 border-b border-slate-800">07 // Evidence Ledger</a>
+      <a href="glossary.html" class="hover:text-amber-400 transition-colors py-2 border-b border-slate-800">08 // Lexicon</a>
+      <a href="trades.html" class="hover:text-amber-400 transition-colors py-2 border-b border-slate-800">09 // American Build</a>
+      <a href="contact.html" class="hover:text-amber-400 transition-colors py-2 border-b border-slate-800">10 // Contact HQ</a>
+    </nav>
+  </div>
+
+  <main>
+    <!-- 01: HERO SECTION -->
+    <section class="relative min-h-[92vh] flex items-center justify-center pt-20 overflow-hidden bg-black">
+      <canvas id="construction-canvas"></canvas>
+      <div class="absolute inset-0 z-0">
+        <img src="assets/img/hero-construction.jpg" alt="Active Heavy Infrastructure" class="w-full h-full object-cover opacity-25 filter contrast-125 brightness-75">
+        <div class="absolute inset-0 bg-gradient-to-t from-[#080B10] via-[#080B10]/70 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-[#080B10] via-transparent to-[#080B10]"></div>
+      </div>
+
+      <div class="relative z-10 max-w-5xl mx-auto px-6 py-20 text-center">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-amber-500/10 border border-amber-500/30 text-amber-400 font-mono text-xs uppercase tracking-widest mb-8 glow-amber">
+          <span class="w-2.5 h-2.5 rounded-full bg-amber-500 animate-ping"></span>
+          Standard 00 // Autonomous Governance Reference Architecture
+        </div>
+
+        <h1 class="text-4xl sm:text-6xl md:text-7xl font-display font-black tracking-tight text-white uppercase leading-[1.05] mb-6">
+          The Largest Construction Project In Fifty Years <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-500">Needs A Permit.</span>
+        </h1>
+
+        <p class="text-xl sm:text-2xl font-mono text-cyan-400 font-bold mb-8 tracking-wide uppercase">We Built It.</p>
+
+        <p class="max-w-3xl mx-auto text-base sm:text-lg text-slate-300 mb-12 font-normal leading-relaxed">
+          AI is no longer just typing text, it is running code and making decisions. Rogue Management Group builds the guardrails that keep these systems in their lane.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-5">
+          <a href="contact.html" class="w-full sm:w-auto bg-amber-500 hover:bg-amber-400 text-black font-mono text-xs font-bold uppercase tracking-wider px-8 py-4 transition-all shadow-[0_0_25px_rgba(245,158,11,0.35)]">Request An AI Risk & Workflow Audit</a>
+          <a href="#whitepaper" class="w-full sm:w-auto bg-[#0F172A] hover:bg-slate-800 text-white font-mono text-xs font-semibold uppercase tracking-wider px-8 py-4 border border-cyan-500/40 glow-cyan transition-all flex items-center justify-center gap-2">Read The Master Thesis â†’</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02: TERMINAL FEED -->
+    <section class="py-12 bg-black border-y border-[#1E293B]">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="bg-[#080B10] border border-[#1E293B] p-6 font-mono text-xs shadow-2xl relative overflow-hidden">
+          <div class="flex items-center justify-between border-b border-[#1E293B] pb-4 mb-4 text-slate-400">
+            <div class="flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
+              <span class="text-white font-bold uppercase">RogueOS // DETERMINISTIC EXECUTION LOG</span>
+            </div>
+            <span class="text-cyan-400">STATE: MUTATION_GUARD_ACTIVE</span>
+          </div>
+          <div class="space-y-2 text-slate-300" id="terminal-feed">
+            <p><span class="text-slate-500">></span> sys_verify: Checking local multisig authority keys... <span class="text-emerald-400">[VALIDATED]</span></p>
+            <p><span class="text-slate-500">></span> consensus_arbiter: 3/3 local models reached mathematical agreement.</p>
+            <p><span class="text-slate-500">></span> sha256_hash: f6590bc39e1f8d4c... <span class="text-amber-400">[IMMUTABLE WAL RECORD LOCKED]</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03: EIGHT STAGE DETERMINISTIC RUNTIME LIFECYCLE (WITH SCROLL REVEAL) -->
+    <section id="lifecycle" class="py-28 bg-[#080B10]">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto mb-20 reveal">
+          <p class="font-mono text-xs text-amber-500 uppercase tracking-widest mb-3">Architectural Standard</p>
+          <h2 class="text-3xl sm:text-4xl font-display font-bold uppercase tracking-tight text-white">The Eight Stage Deterministic Lifecycle</h2>
+          <p class="text-slate-400 mt-4">We separate probabilistic model outputs from governed execution. The agent can plan, but every physical tool action must pass our strict sequence of runtime enforcements.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <!-- Stage 1 -->
+          <div class="bg-[#0F172A] border border-[#1E293B] p-6 relative group hover:border-amber-500/60 transition-all reveal glow-amber">
+            <span class="font-mono text-xs font-bold text-amber-400 block mb-2">STAGE 01</span>
+            <h3 class="text-lg font-display font-bold text-white uppercase mb-2">Initialization</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">Fix the system state and environment variables before any action occurs.</p>
+          </div>
+
+          <!-- Stage 2 -->
+          <div class="bg-[#0F172A] border border-[#1E293B] p-6 relative group hover:border-amber-500/60 transition-all reveal">
+            <span class="font-mono text-xs font-bold text-amber-400 block mb-2">STAGE 02</span>
+            <h3 class="text-lg font-display font-bold text-white uppercase mb-2">Policy Gate</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">Check permissions and limits using open policy agent logic.</p>
+          </div>
+
+          <!-- Stage 3 -->
+          <div class="bg-[#0F172A] border border-[#1E293B] p-6 relative group hover:border-amber-500/60 transition-all reveal">
+            <span class="font-mono text-xs font-bold text-amber-400 block mb-2">STAGE 03</span>
+            <h3 class="text-lg font-display font-bold text-white uppercase mb-2">Validation</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">Evaluate input parameters under a strict deny by default ruleset.</p>
+          </div>
+
+          <!-- Stage 4 -->
+          <div class="bg-[#0F172A] border border-[#1E293B] p-6 relative group hover:border-amber-500/60 transition-all reveal">
+            <span class="font-mono text-xs font-bold text-amber-400 block mb-2">STAGE 04</span>
+            <h3 class="text-lg font-display font-bold text-white uppercase mb-2">Execution</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">Run code inside isolated container enclaves with network access cut off.</p>
+          </div>
+
+          <!-- Stage 5 -->
+          <div class="bg-[#0F172A] border border-[#1E293B] p-6 relative group hover:border-cyan-500/60 transition-all reveal">
+            <span class="font-mono text-xs font-bold text-cyan-400 block mb-2">STAGE 05</span>
+            <h3 class="text-lg font-display font-bold text-white uppercase mb-2">Recovery</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">Catch execution anomalies and manage errors to prevent runaway loops.</p>
+          </div>
+
+          <!-- Stage 6 -->
+          <div class="bg-[#0F172A] border border-[#1E293B] p-6 relative group hover:border-cyan-500/60 transition-all reveal">
+            <span class="font-mono text-xs font-bold text-cyan-400 block mb-2">STAGE 06</span>
+            <h3 class="text-lg font-display font-bold text-white uppercase mb-2">Continuity</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">Write permanent records of intent and actions to local databases.</p>
+          </div>
+
+          <!-- Stage 7 -->
+          <div class="bg-[#0F172A] border border-[#1E293B] p-6 relative group hover:border-cyan-500/60 transition-all reveal">
+            <span class="font-mono text-xs font-bold text-cyan-400 block mb-2">STAGE 07</span>
+            <h3 class="text-lg font-display font-bold text-white uppercase mb-2">Compliance</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">Map execution metrics directly to standard nist and soc security controls.</p>
+          </div>
+
+          <!-- Stage 8 -->
+          <div class="bg-[#0F172A] border border-[#1E293B] p-6 relative group hover:border-cyan-500/60 transition-all reveal glow-cyan">
+            <span class="font-mono text-xs font-bold text-cyan-400 block mb-2">STAGE 08</span>
+            <h3 class="text-lg font-display font-bold text-white uppercase mb-2">Verification</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">Replay execution paths to confirm compliance without sharing private weights.</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+          <div class="bg-[#0F172A] border border-[#1E293B] p-8 relative group hover:border-amber-500/60 transition-all reveal glow-amber">
+            <div class="flex items-center justify-between mb-6">
+              <span class="font-mono text-xs font-bold text-amber-400 px-2.5 py-1 bg-amber-400/10 border border-amber-400/20">LEVEL 01</span>
+              <span class="text-xs font-mono text-slate-500">COMMERCIAL</span>
+            </div>
+            <h3 class="text-2xl font-display font-bold text-white uppercase mb-4">Implementation</h3>
+            <p class="text-sm text-slate-300 mb-6 leading-relaxed">How organizations put AI to work. End to end CRM/API routing, agent integration, and workflow automation.</p>
+            <a href="implementation.html" class="text-xs font-mono text-amber-400 hover:text-white uppercase tracking-wider flex items-center gap-1">Explore Services â†’</a>
+          </div>
+
+          <div class="bg-[#0F172A] border border-[#1E293B] p-8 relative group hover:border-emerald-500/60 transition-all reveal">
+            <div class="flex items-center justify-between mb-6">
+              <span class="font-mono text-xs font-bold text-emerald-400 px-2.5 py-1 bg-emerald-400/10 border border-emerald-400/20">LEVEL 02</span>
+              <span class="text-xs font-mono text-slate-500">CONTROL</span>
+            </div>
+            <h3 class="text-2xl font-display font-bold text-white mb-4">The Builder's Permit</h3>
+            <p class="text-sm text-slate-300 mb-6 leading-relaxed">How organizations control AI agency. Evaluates operational authority, constraints, and intent on demand.</p>
+            <a href="builders-permit.html" class="text-xs font-mono text-emerald-400 hover:text-white uppercase tracking-wider flex items-center gap-1">Explore Permit Kernel â†’</a>
+          </div>
+
+          <div class="bg-[#0F172A] border border-[#1E293B] p-8 relative group hover:border-cyan-500/60 transition-all reveal glow-cyan">
+            <div class="flex items-center justify-between mb-6">
+              <span class="font-mono text-xs font-bold text-cyan-400 px-2.5 py-1 bg-cyan-400/10 border border-cyan-400/20">LEVEL 03</span>
+              <span class="text-xs font-mono text-slate-500">RESEARCH</span>
+            </div>
+            <h3 class="text-2xl font-display font-bold text-white mb-4">RogueOS</h3>
+            <p class="text-sm text-slate-300 mb-6 leading-relaxed">The modular offline architecture. Local enclaves, trust based scheduling, and immutable ledgers.</p>
+            <a href="rogueos.html" class="text-xs font-mono text-cyan-400 hover:text-white uppercase tracking-wider flex items-center gap-1">Explore RogueOS Architecture â†’</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05: EMBEDDED MASTER THESIS & BLUEPRINT VIEWER -->
+    <section id="whitepaper" class="py-28 bg-[#080B10] border-t border-[#1E293B]">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto mb-12 reveal">
+          <span class="font-mono text-xs font-bold text-cyan-400 px-3 py-1 bg-cyan-400/10 border border-cyan-400/20 uppercase">Master Thesis Publication</span>
+          <h2 class="text-3xl sm:text-5xl font-display font-black uppercase text-white mt-4">Master Architectural Specification</h2>
+          <p class="text-slate-400 mt-4 font-mono text-xs">RogueOS v2.0 â€¢ Z LMK R001 Engine â€¢ USPTO Provisional Ref 63/864,057</p>
+        </div>
+
+        <!-- Embedded Interactive Thesis Reader -->
+        <div class="border-2 border-[#1E293B] bg-[#0F172A] shadow-2xl overflow-hidden reveal">
+          <div class="bg-[#1E293B] p-4 flex flex-wrap items-center justify-between gap-4 border-b border-slate-700">
+            <div class="flex items-center gap-3">
+              <span class="w-3 h-3 rounded-full bg-cyan-400 animate-pulse"></span>
+              <span class="font-mono text-xs font-bold text-white uppercase">INTERACTIVE VIEWPORT: Rogue_Master_Architectural_Blueprint.pdf</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <a href="Rogue_Master_Architectural_Blueprint.pdf" target="_blank" class="bg-amber-500 hover:bg-amber-400 text-black font-mono text-xs font-bold uppercase px-4 py-2 transition-all">Download Thesis PDF â†—</a>
+            </div>
+          </div>
+
+          <!-- Tab Bar Navigation for Chapters -->
+          <div class="bg-[#080B10] border-b border-[#1E293B] flex overflow-x-auto text-xs font-mono uppercase tracking-wider">
+            <button id="btn-ch1" onclick="switchTab('ch1')" class="tab-btn px-6 py-4 border-b-2 border-amber-500 text-amber-400 font-bold whitespace-nowrap">CH I: System Core</button>
+            <button id="btn-ch2" onclick="switchTab('ch2')" class="tab-btn px-6 py-4 border-b-2 border-transparent text-slate-400 hover:text-white whitespace-nowrap">CH II: Paradigm & Domains</button>
+            <button id="btn-ch3" onclick="switchTab('ch3')" class="tab-btn px-6 py-4 border-b-2 border-transparent text-slate-400 hover:text-white whitespace-nowrap">CH III: Permit Kernel</button>
+            <button id="btn-ch4" onclick="switchTab('ch4')" class="tab-btn px-6 py-4 border-b-2 border-transparent text-slate-400 hover:text-white whitespace-nowrap">CH IV: Subsystems & Fleet</button>
+            <button id="btn-exhibits" onclick="switchTab('exhibits') class="tab-btn px-6 py-4 border-b-2 border-transparent text-slate-400 hover:text-white whitespace-nowrap">Exhibits: Competitive Matrix</button>
+            <button id="btn-appendix" onclick="switchTab('appendix')" class="tab-btn px-6 py-4 border-b-2 border-transparent text-slate-400 hover:text-white whitespace-nowrap">Appendix: Code & Compliance</button>
+          </div>
+
+          <div class="p-8 sm:p-12 space-y-12 max-h-[800px] overflow-y-auto font-sans text-sm text-slate-300 leading-relaxed">
+
+            <!-- Panel 1: Chapter I -->
+            <div id="panel-ch1" class="whitepaper-panel space-y-6">
+              <div class="border-l-4 border-amber-500 pl-4 py-1">
+                <span class="font-mono text-xs text-amber-500 block uppercase">Chapter I</span>
+                <h3 class="text-2xl font-display font-bold text-white uppercase font-black">Executive Summary & System Core</h3>
+              </div>
+              <p>Rogue Management Group (RMG) is a Charlotte based full stack software development and architectural firm that specializes in autonomous artificial intelligence engineering. The core objective of RMG is to build highly secure, auditable, and non runaway autonomous computing environments.</p>
+              <p>As frontier foundation models grow in cognitive capability, they are increasingly given the operational authority to execute complex workflows. This introduces a critical industrial vulnerability, autonomy without deterministic governance.</p>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-[#080B10] p-6 border border-[#1E293B]">
+                <div>
+                  <h4 class="font-display font-bold text-white uppercase text-base mb-2">The Industrial Risk</h4>
+                  <p class="text-xs text-slate-400">Existing security systems authorize identities but do not evaluate the operational intent of autonomous agents throughout execution.</p>
+                </div>
+                <div>
+                  <h4 class="font-display font-bold text-cyan-400 uppercase text-base mb-2">The Modular Solution</h4>
+                  <p class="text-xs text-slate-400">RogueOS integrates governance directly into runtime behavior. No execution occurs without explicit, cryptographically verifiable, intent bounded authority.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Panel 2: Chapter II -->
+            <div id="panel-ch2" class="whitepaper-panel hidden space-y-6">
+              <div class="border-l-4 border-amber-500 pl-4 py-1">
+                <span class="font-mono text-xs text-amber-500 block uppercase">Chapter II</span>
+                <h3 class="text-2xl font-display font-bold text-white font-black">The RogueOS Paradigm & Architectural Domains</h3>
+              </div>
+              <p>RogueOS proposes an operating system paradigm shift from resource centric scheduling to authority centric execution. It schedules agency itself, evaluating active trust scores to control permissions dynamically.</p>
+              <h4 class="font-display font-bold text-white text-lg">The 5 Logical Domains of RogueOS</h4>
+              <div class="grid grid-cols-1 sm:grid-cols-5 gap-4">
+                <div class="bg-[#080B10] border border-[#1E293B] p-4 rounded text-center">
+                  <span class="text-amber-500 block font-mono font-bold mb-1">01</span>
+                  <p class="text-xs font-bold text-white">GOVERNANCE</p>
+                </div>
+                <div class="bg-[#080B10] border border-[#1E293B] p-4 rounded text-center">
+                  <span class="text-amber-500 block font-mono font-bold mb-1">02</span>
+                  <p class="text-xs font-bold text-white">EXECUTION</p>
+                </div>
+                <div class="bg-[#080B10] border border-[#1E293B] p-4 rounded text-center">
+                  <span class="text-amber-500 block font-mono font-bold mb-1">03</span>
+                  <p class="text-xs font-bold text-white">EVIDENCE</p>
+                </div>
+                <div class="bg-[#080B10] border border-[#1E293B] p-4 rounded text-center">
+                  <span class="text-amber-500 block font-mono font-bold mb-1">04</span>
+                  <p class="text-xs font-bold text-white">SECURITY</p>
+                </div>
+                <div class="bg-[#080B10] border border-[#1E293B] p-4 rounded text-center">
+                  <span class="text-amber-500 block font-mono font-bold mb-1">05</span>
+                  <p class="text-xs font-bold text-white">INTEGRATION</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Panel 3: Chapter III -->
+            <div id="panel-ch3" class="whitepaper-panel hidden space-y-6">
+              <div class="border-l-4 border-amber-500 pl-4 py-1">
+                <span class="font-mono text-xs text-amber-500 block uppercase">Chapter III</span>
+                <h3 class="text-2xl font-display font-bold text-white font-black">The Builder's Permit Kernel & Risk Tiers</h3>
+              </div>
+              <p>Every privileged action requires an associated cryptographic permit containing 10 critical metadata fields including UUID, Request Origin, Operational Intent, Temporal Duration, Resource Constraints, and Signature Seals.</p>
+              <h4 class="font-display font-bold text-white uppercase text-lg">The 5 Risk Tiers of Autonomous Operations</h4>
+              <div class="space-y-3 font-mono text-xs">
+                <div class="p-3 bg-[#080B10] border border-slate-800 flex justify-between items-center">
+                  <span class="text-emerald-400 font-bold">LEVEL 1 // MINIMAL IMPACT</span>
+                  <span class="text-slate-400">Routine reading, processing information, local only</span>
+                </div>
+                <div class="p-3 bg-[#080B10] border border-slate-800 flex justify-between items-center">
+                  <span class="text-emerald-500 font-bold">LEVEL 2 // MODERATE SIGNIFICANCE</span>
+                  <span class="text-slate-400">Controlled infrastructure interactions, database reads</span>
+                </div>
+                <div class="p-3 bg-[#080B10] border border-slate-800 flex justify-between items-center">
+                  <span class="text-amber-400 font-bold">LEVEL 3 // ENTERPRISE IMPACT</span>
+                  <span class="text-slate-400">Administrative writes, sensitive database access</span>
+                </div>
+                <div class="p-3 bg-[#080B10] border border-slate-800 flex justify-between items-center">
+                  <span class="text-amber-500 font-bold">LEVEL 4 // CRITICAL INFRASTRUCTURE</span>
+                  <span class="text-slate-400">Production environment modifications, deployment, IAM keys</span>
+                </div>
+                <div class="p-3 bg-[#080B10] border border-slate-800 flex justify-between items-center">
+                  <span class="text-rose-500 font-bold animate-pulse">LEVEL 5 // MISSION CRITICAL</span>
+                  <span class="text-slate-400">National security, medical devices, safety critical actions</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Panel 4: Chapter IV -->
+            <div id="panel-ch4" class="whitepaper-panel hidden space-y-6">
+              <div class="border-l-4 border-amber-500 pl-4 py-1">
+                <span class="font-mono text-xs text-amber-500 block uppercase">Chapter IV</span>
+                <h3 class="text-2xl font-display font-bold text-white uppercase font-black">Active Governance Subsystems & Fleet Identity</h3>
+              </div>
+              <p>RogueOS secures enterprise systems through three synchronized core subsystems: the Governance Engine, the Evidence Ledger / Flight Data Recorder, and the calculated Trust Fabric.</p>
+              <div class="p-5 bg-[#080B10] border border-[#1E293B]">
+                <h4 class="font-display font-bold text-white uppercase text-base mb-2">Fleet Aviation Analogy</h4>
+                <p class="text-xs text-slate-400 leading-relaxed font-mono">Just like commercial airlines identify and track thousands of aircraft across distinct airspaces, RogueOS implements a unique persistent cryptographic Fleet Tail Number scheme for every autonomous agent.</p>
+              </div>
+            </div>
+
+            <!-- Panel 5: Exhibits -->
+            <div id="panel-exhibits" class="whitepaper-panel hidden space-y-6">
+              <div class="border-l-4 border-amber-500 pl-4 py-1">
+                <span class="font-mono text-xs text-amber-500 block uppercase">Exhibit A</span>
+                <h3 class="text-2xl font-display font-bold text-white uppercase font-black">The Comparative Governance Matrix</h3>
+              </div>
+              <div class="overflow-x-auto">
+                <table class="w-full text-left font-mono text-xs border-collapse">
+                  <thead>
+                    <tr class="bg-[#080B10] border-b border-slate-700 text-slate-400 uppercase tracking-wider">
+                      <th class="p-3">Control Lifecycle Phase</th>
+                      <th class="p-3">LangGraph</th>
+                      <th class="p-3">Temporal</th>
+                      <th class="p-3">OPA</th>
+                      <th class="p-3">AWS Guardrails</th>
+                      <th class="p-3 text-amber-400">RogueOS (RMG)</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-[#1E293B] bg-[#0F172A]">
+                    <tr>
+                      <td class="p-3 font-bold text-slate-300">Policy Gate (A)</td>
+                      <td class="p-3 text-slate-500">Manual / custom code</td>
+                      <td class="p-3 text-slate-500">N/A (Workflows)</td>
+                      <td class="p-3 text-emerald-400">Yes (Rego engine)</td>
+                      <td class="p-3 text-emerald-400">Yes (Cloud rules)</td>
+                      <td class="p-3 text-emerald-400 font-bold">Yes (Declarative Rego)</td>
+                    </tr>
+                    <tr>
+                      <td class="p-3 font-bold text-slate-300">Provenance Log (B)</td>
+                      <td class="p-3 text-emerald-400">Through LangSmith</td>
+                      <td class="p-3 text-slate-500">Telemetry only</td>
+                      <td class="p-3 text-slate-500">N/A</td>
+                      <td class="p-3 text-slate-400">AWS CloudTrail</td>
+                      <td class="p-3 text-emerald-400 font-bold">Yes (OTel + Langfuse)</td>
+                    </tr>
+                    <tr>
+                      <td class="p-3 font-bold text-slate-300">Checkpointing (C)</td>
+                      <td class="p-3 text-emerald-400">Yes (State DB)</td>
+                      <td class="p-3 text-emerald-400">Yes (Event sourcing)</td>
+                      <td class="p-3 text-slate-500">N/A</td>
+                      <td class="p-3 text-slate-500">N/A</td>
+                      <td class="p-3 text-emerald-400 font-bold">Yes (SQLite state)</td>
+                    </tr>
+                    <tr>
+                      <td class="p-3 font-bold text-slate-300">Agent Registry (D)</td>
+                      <td class="p-3 text-slate-500">N/A</td>
+                      <td class="p-3 text-emerald-400">Yes (Namespaces)</td>
+                      <td class="p-3 text-slate-500">N/A</td>
+                      <td class="p-3 text-slate-500">N/A</td>
+                      <td class="p-3 text-emerald-400 font-bold">Yes (Private enclaves)</td>
+                    </tr>
+                    <tr>
+                      <td class="p-3 font-bold text-slate-300">Detain/Quarantine (E)</td>
+                      <td class="p-3 text-rose-500">No (Exception)</td>
+                      <td class="p-3 text-rose-500">No (Retry loop)</td>
+                      <td class="p-3 text-rose-500">No (Hard deny)</td>
+                      <td class="p-3 text-rose-500">No (Hard block)</td>
+                      <td class="p-3 text-emerald-400 font-bold">Yes (Holding + review)</td>
+                    </tr>
+                    <tr>
+                      <td class="p-3 font-bold text-slate-300">Local Security (F)</td>
+                      <td class="p-3 text-rose-500">No (Cloud tethered)</td>
+                      <td class="p-3 text-slate-400">Self hostable</td>
+                      <td class="p-3 text-emerald-400">Yes</td>
+                      <td class="p-3 text-rose-500">No (Cloud locked)</td>
+                      <td class="p-3 text-emerald-400 font-bold">Yes (Air gapped local build)</td>
+                    </tr>
+                    <tr class="bg-amber-500/5">
+                      <td class="p-3 font-bold text-amber-400">Autonomy Scheduling</td>
+                      <td class="p-3 text-rose-500">No</td>
+                      <td class="p-3 text-rose-500">No</td>
+                      <td class="p-3 text-rose-500">No</td>
+                      <td class="p-3 text-rose-500">No</td>
+                      <td class="p-3 text-emerald-400 font-bold">Yes (Trust scores schedule)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Panel 6: Appendix -->
+            <div id="panel-appendix" class="whitepaper-panel hidden space-y-6">
+              <div class="border-l-4 border-amber-500 pl-4 py-1">
+                <span class="font-mono text-xs text-amber-500 block uppercase">Appendix</span>
+                <h3 class="text-2xl font-display font-bold text-white uppercase font-black">Compliance Mapping & Codified Blueprint</h3>
+              </div>
+              <p>The auditable, local controls implemented within Rogue1 Local map directly to standard corporate and government security frameworks:</p>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4 font-mono text-[11px] mb-6">
+                <div class="p-4 bg-[#080B10] border border-[#1E293B]">
+                  <strong class="text-cyan-400 block mb-1">NIST AI RMF / NIST SP 800 53</strong>
+                  Satisfies AC 6 (Least Privilege), AU 12 (Audit), and CP 10 (System Recovery).
+                </div>
+                <div class="p-4 bg-[#080B10] border border-[#1E293B]">
+                  <strong class="text-cyan-400 block mb-1">SOC 2 TYPE II / ISO 27001</strong>
+                  Provides continuous operating controls and tamper proof logs.
+                </div>
+                <div class="p-4 bg-[#080B10] border border-[#1E293B]">
+                  <strong class="text-cyan-400 block mb-1">EU AI ACT</strong>
+                  Provides conformity assessments for high risk models via OPA pre execution gates.
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- CONTACT CTA -->
+  <section class="py-24 bg-black border-t border-[#1E293B]">
+    <div class="max-w-4xl mx-auto px-6 text-center reveal">
+      <h2 class="text-3xl sm:text-5xl font-display font-black uppercase text-white tracking-tight mb-6">
+        Build the system. Govern the autonomy. Keep the human in the loop.
+      </h2>
+      <p class="text-slate-400 text-base sm:text-lg mb-10">
+        If you need an AI compliance and security audit for your Charlotte based company or want to license our code, open the channel today.
+      </p>
+      <a href="mailto:stephen.zeitvogel@roguemgmtgroup.com" class="bg-amber-500 hover:bg-amber-400 text-black font-mono text-xs font-bold uppercase tracking-wider px-8 py-4 inline-block shadow-[0_0_25px_rgba(245,158,11,0.4)] transition-all">stephen.zeitvogel@roguemgmtgroup.com</a>
+    </div>
+  </section>
+
+  <footer class="bg-[#080B10] border-t border-[#1E293B] py-16 text-slate-500 font-mono text-xs text-center">
+    <p class="text-white font-bold uppercase mb-2">Rogue Management Group, LLC</p>
+    <p class="text-slate-400">Charlotte, North Carolina // All Rights Reserved Â© 2026</p>
+    
+    <!-- SOCIAL FEEDS & CHANNELS -->
+    <div class="flex items-center justify-center gap-6 mt-6">
+      <a href="https://youtube.com/@jackiediesel" target="_blank" class="text-slate-500 hover:text-amber-500 transition-colors flex items-center gap-1.5" title="YouTube Channel">
+        <i data-lucide="youtube" class="w-4 h-4"></i> YouTube
+      </a>
+      <a href="https://linkedin.com/in/stephenzeitvogel" target="_blank" class="text-slate-500 hover:text-cyan-400 transition-colors flex items-center gap-1.5" title="LinkedIn Professional Network">
+        <i data-lucide="linkedin" class="w-4 h-4"></i> LinkedIn
+      </a>
+      <a href="https://github.com/roguemanagementgroup" target="_blank" class="text-slate-500 hover:text-emerald-400 transition-colors flex items-center gap-1.5" title="GitHub Repositories">
+        <i data-lucide="github" class="w-4 h-4"></i> GitHub
+      </a>
+      <a href="https://soundcloud.com/jackiediesel" target="_blank" class="text-slate-500 hover:text-rose-400 transition-colors flex items-center gap-1.5" title="SoundCloud Music Profile">
+        <i data-lucide="music" class="w-4 h-4"></i> SoundCloud
+      </a>
+    </div>
+  </footer>
+
+  <!-- CORE SCRIPTS -->
+  <script src="assets/js/rm-app.js"></script>
+</body>
+</html>
+

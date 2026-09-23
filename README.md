@@ -31,6 +31,14 @@ VS Code edit → local commit (main) → push to GitHub → Netlify auto-deploy
 - Security headers are enforced in `netlify.toml` (CSP, X-Frame-Options, referrer policy).
 - Secrets live in the OS keyring and Netlify environment variables. Nothing sensitive is committed, ever.
 
+### Change workflow
+
+Small, single-purpose commits and pull requests are preferred over large direct-to-`main` pushes, even for internal changes:
+
+- Cut a short-lived feature/fix branch for anything beyond a one-line correction.
+- Open a PR with a clear description of what changed and why, then merge and delete the branch.
+- Keep scratch/local drafts (research notes, one-off scripts, working copies) out of the repository entirely — see `.gitignore`. In-progress redesigns belong in a dedicated branch/PR (marked draft) rather than as untracked local files.
+
 ## Local development
 
 No toolchain required to view: open `index.html` in a browser. For a local server:

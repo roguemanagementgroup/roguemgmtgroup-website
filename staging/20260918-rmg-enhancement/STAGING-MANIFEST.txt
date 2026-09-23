@@ -1,0 +1,9 @@
+﻿RMG LOCAL STAGING INPUTS
+Created UTC: 
+2026-09-19T00:49:05.7377798Z
+Purpose: non-production visual/content enhancement draft
+No commit, push, deploy, Netlify, Search Console, Google Business, or social changes performed.
+Inputs:
+- deploy-source: expanded from attached deploy ZIP
+- current-local-root: copied from C:\Rogue-Presentation excluding .git, staging, incoming
+Next: compare source structures, select canonical production files, then draft changes inside this staging tree only.

@@ -34,3 +34,5 @@ $RECYCLE.BIN/
 dist/
 *.local.log
 npm-debug.log*
+
+.netlify/

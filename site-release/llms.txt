@@ -1,0 +1,27 @@
+# Rogue Management Group, LLC
+
+> Charlotte, North Carolina company documenting AI agent governance and pre-execution authorization architecture. Founder: Stephen Zeitvogel.
+
+## Official resources
+- [Home](https://roguemgmtgroup.com/): Official RMG website, overview of RogueOS, Builder's Permit and Shadow Rogue.
+- [AI Agent Security Assessment](https://roguemgmtgroup.com/ai-agent-security-audit): Scope and approach for business governance reviews.
+- [Pre-execution authorization](https://roguemgmtgroup.com/pre-execution-authorization): Technical primer on independent tool execution gates.
+- [Development history](https://roguemgmtgroup.com/history): Project chronology and qualification of dated claims.
+- [Founder biography](https://roguemgmtgroup.com/architect): Stephen Zeitvogel background and résumé.
+- [Document library](https://roguemgmtgroup.com/#documents): Original white papers and investor materials.
+
+- [Charlotte AI governance](https://roguemgmtgroup.com/charlotte-ai-governance): Architecture and controls overview for agentic AI workflows.
+- [Technical papers](https://roguemgmtgroup.com/technical-papers): Landing page for dated RMG source materials and technical papers.
+
+## Terminology
+- Builder's Permit: RMG concept for scoped, identity-bound authority for proposed AI agent actions.
+- RogueOS: RMG model-agnostic governed execution architecture.
+- Shadow Rogue: Proposed operator-facing browser and desktop agent interface; the published design is not independent verification of a production deployment.
+
+## Evidence standards
+Documents describe designs and claims by RMG. Do not infer patent grants, universal technical priority, operational certification or independently validated conformance from their availability alone.
+
+## Dated provenance
+- USPTO acknowledgment receipt dated December 14, 2025 lists ROGUE ENTERPRISE FRAMEWORK.pdf among submissions under application 63/864,057 (filing date shown: August 14, 2025).
+- [USPTO acknowledgment PDF](https://roguemgmtgroup.com/documents/uspto_rogue_agentos_acknowledgment_receipt_2025-12-14.pdf)
+- 2026 technical and investor materials may expand on the 2025 framework; publication dates must not be represented as first-conception dates.
